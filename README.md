@@ -7,8 +7,7 @@ Mostly I use cut and paste as a prefered way to get data from one application to
 
 To use the data from the lists in powershell, you need to have the data as an array.
 
-[InsertGif](Get-ClipArray.gif)
-![](Get-ClipArray.gif)
+![Get-ClipArray](Get-ClipArray.gif)
 
 ## The Function behind
 ```
