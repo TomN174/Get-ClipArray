@@ -12,12 +12,11 @@ function Get-ClipArray {
     $Clip
     if ($psISE) {
         $psISE.CurrentFile.Editor.InsertText($Clip)
-        #Write-Host 'ISE' -ForegroundColor DarkGray
+        Write-Verbose 'ISE'
     }
     elseif ($psEditor) {
         $psEditor.GetEditorContext().CurrentFile.InsertText($Clip)
-        #Write-Host 'VS Code' -ForegroundColor DarkGray
+        Write-Verbose 'VS Code'
     }
-          
-}
+ }
   
