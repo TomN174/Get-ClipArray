@@ -2,4 +2,4 @@
 Turns Clipboard into Powershell Array
 
 
-[InsertGif](Get-ClipArray.gif)
+![](Get-ClipArray.gif)
