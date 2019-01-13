@@ -49,8 +49,8 @@ $profile
 I modified the powershell profiles for ISE and VS Code add the line
 `. C:\YourPath\Get-ClipArray.ps1`
 for loading the function(change YourPath as needed).
-  - **PowershellISE**
-Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(...`
+  - **PowershellISE**  
+ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(...`
    
     The complete ISE profile `Microsoft.PowerShellISE_profile.ps1`:
        ```powershell
@@ -71,7 +71,7 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
       ![ISE](pics/ISE.png)
 
 
- - **Visual Studio Code**
+ - **Visual Studio Code**  
  In Visual Studio Code we have to register the command as an additional Powershell command. For details see 
  https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/  
    
