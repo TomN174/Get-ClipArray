@@ -1,3 +1,4 @@
+#requires -Version 5.0
 function Get-ClipArray {
     [CmdletBinding(SupportsShouldProcess)]
     param()

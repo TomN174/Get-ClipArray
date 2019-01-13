@@ -16,9 +16,11 @@ Finally paste the array with a shortcut like ctrl + alt + c into powershell
 ## The function behind
 The function has to be  added to your powershell profiles or  loaded in your standard module. In further documentation I describe the profile way
 ```powershell
+#requires -Version 5.0
 function Get-ClipArray {
     [CmdletBinding(SupportsShouldProcess)]
     param()
+  
     [System.Collections.ArrayList]$ClipIn = (Get-Clipboard).Trim()
     #remove last empty line
     if (!$ClipIn[-1]) {
@@ -29,15 +31,18 @@ function Get-ClipArray {
     $Clip
     if ($psISE) {
         $psISE.CurrentFile.Editor.InsertText($Clip)
+        Write-Verbose 'ISE'
     }
     elseif ($psEditor) {
         $psEditor.GetEditorContext().CurrentFile.InsertText($Clip)
+        Write-Verbose 'VS Code'
     }
  }
+  
 ```
 
 ## The shortcut and the profiles
-For an efficient way using the function  I definded a shortcut  "ctrl+alt+c". 
+For an efficient way using the function  I definded a shortcut  **"ctrl+alt+c"**. 
 If no profile is defined you have to create one for Powershell ISE and for VS Code. Just run the following code:
 ```powershell
 If (!(Test-Path $profile)) {
@@ -98,7 +103,10 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
       ![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
 
 
+
+
+
 ## Credits
-Thanks to Jeffery Hicks who posted that nice article.
+Thanks to Jeffery Hicks who posted that nice article:
 https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
 
