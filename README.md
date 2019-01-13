@@ -11,8 +11,8 @@ Finally paste the array with a shortcut like ctrl + alt + c into powershell
 ![Get-ClipArray](pics/Get-ClipArray.gif)
 
 ## The function behind
-The function has to be loaded in your standard module 
-```
+The function has to be  added to your powershell profiles or  loaded in your standard module. In further documentation I describe the profile way
+```powershell
 function Get-ClipArray {
     [CmdletBinding(SupportsShouldProcess)]
     param()
@@ -36,7 +36,7 @@ function Get-ClipArray {
 ## The shortcut and the profiles
 For an efficient way using the function  I definded a shortcut  "ctrl+alt+c". 
 If no profile is defined you have to create one for Powershell ISE and for VS Code. Just run the following code:
-```
+```powershell
 If (!(Test-Path $profile)) {
     New-Item $profile -ItemType file –Force
 }
@@ -47,10 +47,10 @@ I modified the powershell profiles for ISE and VS Code add the line
 `. C:\YourPath\Get-ClipArray.ps1`
 for loading the function(change YourPath as needed).
   - **PowershellISE**
-Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(...`
+Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(...`  
 
-The whole ISE profile `Microsoft.PowerShellISE_profile.ps1`:
-```
+ \ The complete ISE profile `Microsoft.PowerShellISE_profile.ps1`:
+```powershell
 # load function 
 . C:\YourPath\Get-ClipArray.ps1
 
@@ -63,25 +63,27 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
   'Control+Alt+C'
 )
 ```
-In ISE you can see the result under menue Add-ons:
+  In ISE you can see the result under menue Add-ons:
 
 ![](pics/ISE.png)
 
 
  - **Visual Studio Code**
  In Visual Studio Code we have to register the command as an additional Powershell command. For details see 
- https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
-The whole VS Code Powershell profile `Microsoft.VSCode_profile.ps1`:
-```
-# load function 
-. C:\YourPath\Get-ClipArray.ps1
+ https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/  
+   
+   The complete VS Code Powershell profile `Microsoft.VSCode_profile.ps1`:
+```powershell
+# load function
+ . C:\YourPath\Get-ClipArray.ps1
 
 # Register Command in VS Code
 Register-EditorCommand -Name "MyClipArray" -DisplayName "Get Clipboard and convert to Array" -ScriptBlock {Get-ClipArray} -SuppressOutput
 ```
+  
 ![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
 
-```
+```json
 {
 "key": "ctrl+alt+c",
 "command": "PowerShell.InvokeRegisteredEditorCommand",
@@ -89,3 +91,5 @@ Register-EditorCommand -Name "MyClipArray" -DisplayName "Get Clipboard and conve
 }
 ```
 https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
+
+
