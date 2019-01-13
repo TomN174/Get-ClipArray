@@ -52,6 +52,10 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
   'Control+Alt+C'
 )
 ```
+In ISE you can see the result under menue Add-ons:
+![](pics/ISE.png)
+
+
  - **Visual Studio Code**
 
 ![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
