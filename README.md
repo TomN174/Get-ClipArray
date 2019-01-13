@@ -2,9 +2,9 @@
 
 
 # Get-ClipArray
-Turns Clipboard into Powershell Array
+Turns clipboard content into Powershell array
 
-## The idea:
+## The idea
 During my workday I often get lists of users, computers, ...  as email, excel and text files. E.g. put some computers to a group. 
 Mostly I use cut and paste as a prefered way to get data from one application to another. 
 To use the data from the lists in powershell, you need to have the data as an array.
@@ -96,6 +96,9 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
       }
       ```
       ![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
-https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
 
+
+## Credits
+Thanks to Jeffery Hicks who posted that nice article.
+https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
 
