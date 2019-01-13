@@ -8,7 +8,7 @@ To use the data from the lists in powershell, you need to have the data as an ar
 
 Finally paste the array with a shortcut like ctrl + alt + c into powershell
 
-![Get-ClipArray](gif/Get-ClipArray.gif)
+![Get-ClipArray](pics/Get-ClipArray.gif)
 
 ## The function behind
 The function has to be loaded in your standard module 
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
 ```
  - **Visual Studio Code**
 
-![Set-KeyboardShortcutVsCode](gif/Set-KeyboardShortcutVsCode.gif)
+![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
 ```
 {
 "key": "ctrl+alt+c",
