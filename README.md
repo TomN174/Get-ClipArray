@@ -50,7 +50,7 @@ I modified the powershell profiles for ISE and VS Code add the line
 `. C:\YourPath\Get-ClipArray.ps1`
 for loading the function(change YourPath as needed).
   - **PowershellISE**  
- Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(...`
+Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(...`
    
     The complete ISE profile `Microsoft.PowerShellISE_profile.ps1`:
        ```powershell
@@ -83,10 +83,10 @@ for loading the function(change YourPath as needed).
       # Register Command in VS Code
       Register-EditorCommand -Name "MyClipArray" -DisplayName "Get Clipboard and convert to Array" -ScriptBlock {Get-ClipArray} -SuppressOutput
       ```  
-      yyy
-      
-  
-      ![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
+         
+      Keyboard shortcut key has to be defined manually in VS Code.
+      Go to File – Preferences – Keyboard Shortcuts and then click the link to edit keybindings.json
+      Insert code below
 
       ```json
       {
@@ -95,6 +95,7 @@ for loading the function(change YourPath as needed).
       "args": { "commandName": "MyClipArray"},
       }
       ```
+      ![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
 https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
 
 
