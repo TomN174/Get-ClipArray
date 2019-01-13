@@ -8,9 +8,10 @@ To use the data from the lists in powershell, you need to have the data as an ar
 
 Finally paste the array with a shortcut like ctrl + alt + c into powershell
 
-![Get-ClipArray](gif(Get-ClipArray.gif)
+![Get-ClipArray](gif/Get-ClipArray.gif)
 
-## The Function behind
+## The function behind
+The function has to be loaded in your standard module 
 ```
 function Get-ClipArray {
     [CmdletBinding(SupportsShouldProcess)]
@@ -32,13 +33,25 @@ function Get-ClipArray {
  }
 ```
 
-## The Shortcut
-For an efficient way using the function  I definded a shortcut 
-### PowershellISE
-
- 
-
+## The shortcut and the profiles
+For an efficient way using the function  I definded a shortcut  "ctrl+alt+c". 
+I modified the powershell profiles for ISE and VS Code add the line
+`. C:\YourPath\Get-ClipArray.ps1`
+for loading the function. For the shortcut in 
   - **PowershellISE**
+```
+# load function 
+. C:\YourPath\Get-ClipArray.ps1
+
+# create keyboard shortcut
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
+  'Clipboard to Array',
+  {
+    Get-ClipArray
+  },
+  'Control+Alt+C'
+)
+```
  - **Visual Studio Code**
 
 ![Set-KeyboardShortcutVsCode](gif/Set-KeyboardShortcutVsCode.gif)
