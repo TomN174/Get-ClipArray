@@ -85,8 +85,8 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
       ```  
          
       Keyboard shortcut key has to be defined manually in VS Code.
-      Go to File – Preferences – Keyboard Shortcuts and then click the link to edit keybindings.json
-      Insert code below
+      Go to File – Preferences – Keyboard Shortcuts and then click the link to edit keybindings.json  
+      Insert code below between [ ]
 
       ```json
       {
