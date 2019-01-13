@@ -107,6 +107,8 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
 
 
 ## Credits
-Thanks to Jeffery Hicks who posted that nice article:
+Thanks to Jeffery Hicks who posted that nice article:  
 https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
+
+
 
