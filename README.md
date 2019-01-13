@@ -4,10 +4,11 @@ Turns Clipboard into Powershell Array
 ## The idea:
 During my workday I often get lists of users, computers, ...  as email, excel and text files. E.g. put some computers to a group. 
 Mostly I use cut and paste as a prefered way to get data from one application to another. 
-
 To use the data from the lists in powershell, you need to have the data as an array.
 
-![Get-ClipArray](Get-ClipArray.gif)
+Finally paste the array with a shortcut like ctrl + alt + c into powershell
+
+![Get-ClipArray](gif(Get-ClipArray.gif)
 
 ## The Function behind
 ```
@@ -29,5 +30,23 @@ function Get-ClipArray {
         $psEditor.GetEditorContext().CurrentFile.InsertText($Clip)
     }
  }
+```
+
+## The Shortcut
+For an efficient way using the function  I definded a shortcut 
+### PowershellISE
+
+ 
+
+  - **PowershellISE**
+ - **Visual Studio Code**
+
+![Set-KeyboardShortcutVsCode](gif/Set-KeyboardShortcutVsCode.gif)
+```
+{
+"key": "ctrl+alt+c",
+"command": "PowerShell.InvokeRegisteredEditorCommand",
+"args": { "commandName": "MyClipArray"},
+}
 ```
 https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
