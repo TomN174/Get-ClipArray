@@ -1,3 +1,6 @@
+
+
+
 # Get-ClipArray
 Turns Clipboard into Powershell Array
 
@@ -47,25 +50,25 @@ I modified the powershell profiles for ISE and VS Code add the line
 `. C:\YourPath\Get-ClipArray.ps1`
 for loading the function(change YourPath as needed).
   - **PowershellISE**
-Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(...`  
+Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(...`
+   
+    The complete ISE profile `Microsoft.PowerShellISE_profile.ps1`:
+       ```powershell
+        # load function 
+        . C:\YourPath\Get-ClipArray.ps1
+        
+        # create keyboard shortcut
+        $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
+          'Clipboard to Array',
+          {
+            Get-ClipArray
+          },
+          'Control+Alt+C'
+        )
+      ```  
+      In ISE you can see the result under menue Add-ons:
 
- \ The complete ISE profile `Microsoft.PowerShellISE_profile.ps1`:
-```powershell
-# load function 
-. C:\YourPath\Get-ClipArray.ps1
-
-# create keyboard shortcut
-$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
-  'Clipboard to Array',
-  {
-    Get-ClipArray
-  },
-  'Control+Alt+C'
-)
-```
-  In ISE you can see the result under menue Add-ons:
-
-![](pics/ISE.png)
+      ![ISE](pics/ISE.png)
 
 
  - **Visual Studio Code**
@@ -73,23 +76,25 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
  https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/  
    
    The complete VS Code Powershell profile `Microsoft.VSCode_profile.ps1`:
-```powershell
-# load function
- . C:\YourPath\Get-ClipArray.ps1
+      ```powershell
+      # load function
+       . C:\YourPath\Get-ClipArray.ps1
 
-# Register Command in VS Code
-Register-EditorCommand -Name "MyClipArray" -DisplayName "Get Clipboard and convert to Array" -ScriptBlock {Get-ClipArray} -SuppressOutput
-```
+      # Register Command in VS Code
+      Register-EditorCommand -Name "MyClipArray" -DisplayName "Get Clipboard and convert to Array" -ScriptBlock {Get-ClipArray} -SuppressOutput
+      ```  
+      yyy
+      
   
-![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
+      ![Set-KeyboardShortcutVsCode](pics/Set-KeyboardShortcutVsCode.gif)
 
-```json
-{
-"key": "ctrl+alt+c",
-"command": "PowerShell.InvokeRegisteredEditorCommand",
-"args": { "commandName": "MyClipArray"},
-}
-```
+      ```json
+      {
+      "key": "ctrl+alt+c",
+      "command": "PowerShell.InvokeRegisteredEditorCommand",
+      "args": { "commandName": "MyClipArray"},
+      }
+      ```
 https://jdhitsolutions.com/blog/powershell/5907/extending-vscode-with-powershell/
 
 
