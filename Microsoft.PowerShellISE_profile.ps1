@@ -3,9 +3,9 @@
  
  # create keyboard shortcut
  $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
-   'Clipboard to Array',
+   'Paste Clipboard as Array',
    {
      Get-ClipArray
    },
-   'Control+Alt+C'
+   'Control+Alt+V'
  )
