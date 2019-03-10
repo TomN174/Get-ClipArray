@@ -9,7 +9,7 @@ During my workday I often get lists of users, computers, ...  as email, excel an
 Mostly I use cut and paste as a prefered way to get data from one application to another. 
 To use the data from the lists in powershell, you need to have the data as an array.
 
-Finally paste the array with a shortcut like ctrl + alt + c into powershell
+Finally paste the array with a shortcut like ctrl + alt + v into powershell
 
 ![Get-ClipArray](pics/Get-ClipArray.gif)
 
@@ -42,7 +42,7 @@ function Get-ClipArray {
 ```
 
 ## The shortcut and the profiles
-For an efficient way using the function  I definded a shortcut  **"ctrl+alt+c"**. 
+For an efficient way using the function  I definded a shortcut  **"ctrl+alt+v"**. 
 If no profile is defined you have to create one for Powershell ISE and for VS Code. Just run the following code:
 ```powershell
 If (!(Test-Path $profile)) {
@@ -64,11 +64,11 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
         
         # create keyboard shortcut
         $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add(
-          'Clipboard to Array',
+          'Paste Clipboard as Array',
           {
             Get-ClipArray
           },
-          'Control+Alt+C'
+          'Control+Alt+V'
         )
       ```  
       In ISE you can see the result under menue Add-ons:
@@ -86,7 +86,7 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
        . C:\YourPath\Get-ClipArray.ps1
 
       # Register Command in VS Code
-      Register-EditorCommand -Name "MyClipArray" -DisplayName "Get Clipboard and convert to Array" -ScriptBlock {Get-ClipArray} -SuppressOutput
+      Register-EditorCommand -Name "MyClipArray" -DisplayName "Paste Clipboard as Array" -ScriptBlock {Get-ClipArray} -SuppressOutput
       ```  
          
       Keyboard shortcut key has to be defined manually in VS Code.
@@ -95,7 +95,7 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
 
       ```json
       {
-      "key": "ctrl+alt+c",
+      "key": "ctrl+alt+v",
       "command": "PowerShell.InvokeRegisteredEditorCommand",
       "args": { "commandName": "MyClipArray"},
       }
