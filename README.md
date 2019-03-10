@@ -9,7 +9,7 @@ During my workday I often get lists of users, computers, ...  as email, excel an
 Mostly I use cut and paste as a prefered way to get data from one application to another. 
 To use the data from the lists in powershell, you need to have the data as an array.
 
-Finally paste the array with a shortcut like ctrl + alt + v into powershell
+Finally paste the array with a shortcut like **ctrl + alt + v** into powershell
 
 ![Get-ClipArray](pics/Get-ClipArray.gif)
 
