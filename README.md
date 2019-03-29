@@ -90,10 +90,11 @@ Defining the shortcut in ISE starts with `$psISE.CurrentPowerShellTab.AddOnsMenu
       ```  
          
       Keyboard shortcut key has to be defined manually in VS Code.
+      
       Go to 
       View – Command Palette: 
       Type keyb and select "Preferences: Open Keyboard Shortcuts(JSON)"
-      
+
       Insert code below between [ ]
 
       ```json
